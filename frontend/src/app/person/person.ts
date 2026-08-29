@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class Person {
 
-  person: any = null;
+  person = signal<any>(null);
 
   constructor(
     private http: HttpClient,
@@ -19,22 +19,17 @@ export class Person {
   ) {}
 
   ngOnInit() {
-
-    const personId =
-      this.route.snapshot.paramMap.get('personId');
+    const personId = this.route.snapshot.paramMap.get('personId');
 
     this.http.get<any>(
       `http://127.0.0.1:8000/api/person/${personId}`
     ).subscribe({
-
       next: (result) => {
-        this.person = result;
+        this.person.set(result);
       },
-
       error: (error) => {
         console.error(error);
       }
-
     });
   }
 }

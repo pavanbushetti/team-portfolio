@@ -21,18 +21,11 @@ people = {
         "skills": ["Python", "ROS2", "Angular", "Isaac Sim"]
     },
 
-    "rahul": {
-        "name": "Rahul Kumar",
+    "pavan": {
+        "name": "Pavan Ashok Bushetti",
         "role": "Software Engineer",
-        "about": "I develop web applications.",
-        "skills": ["Python", "Angular", "JavaScript", "Docker"]
-    },
-
-    "arun": {
-        "name": "Arun Kumar",
-        "role": "Embedded Engineer",
-        "about": "I work with embedded systems.",
-        "skills": ["C", "ESP32", "Arduino", "Embedded Systems"]
+        "about": "I develop applications of Opceneter",
+        "skills": ["C#", "Angular", "JavaScript", "SQL"]
     }
 }
 

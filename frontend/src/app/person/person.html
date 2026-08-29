@@ -1,21 +1,18 @@
-<div *ngIf="person">
+<div *ngIf="person()">
 
-  <h1>{{ person.name }}</h1>
-
-  <h2>{{ person.role }}</h2>
-
-  <p>{{ person.about }}</p>
+  <h1>{{ person().name }}</h1>
+  <h2>{{ person().role }}</h2>
+  <p>{{ person().about }}</p>
 
   <h3>Skills</h3>
-
   <ul>
-    <li *ngFor="let skill of person.skills">
+    <li *ngFor="let skill of person().skills">
       {{ skill }}
     </li>
   </ul>
 
 </div>
 
-<div *ngIf="!person">
+<div *ngIf="!person()">
   Loading...
 </div>
